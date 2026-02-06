@@ -48,40 +48,40 @@ export default function BedAvailability() {
       />
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0">
-          <div className="flex items-center gap-3">
-            <BedDouble className="w-8 h-8 opacity-80" />
-            <div>
-              <p className="text-2xl font-bold">{totalAvailable}</p>
-              <p className="text-sm text-white/80">General Beds</p>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <BedDouble className="w-6 h-6 sm:w-8 sm:h-8 opacity-80 flex-shrink-0" />
+            <div className="min-w-0">
+              <p className="text-lg sm:text-2xl font-bold">{totalAvailable}</p>
+              <p className="text-xs sm:text-sm text-white/80 truncate">General Beds</p>
             </div>
           </div>
         </Card>
         <Card className="bg-gradient-to-br from-red-500 to-red-600 text-white border-0">
-          <div className="flex items-center gap-3">
-            <Heart className="w-8 h-8 opacity-80" />
-            <div>
-              <p className="text-2xl font-bold">{totalICU}</p>
-              <p className="text-sm text-white/80">ICU Beds</p>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Heart className="w-6 h-6 sm:w-8 sm:h-8 opacity-80 flex-shrink-0" />
+            <div className="min-w-0">
+              <p className="text-lg sm:text-2xl font-bold">{totalICU}</p>
+              <p className="text-xs sm:text-sm text-white/80 truncate">ICU Beds</p>
             </div>
           </div>
         </Card>
         <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white border-0">
-          <div className="flex items-center gap-3">
-            <Wind className="w-8 h-8 opacity-80" />
-            <div>
-              <p className="text-2xl font-bold">{totalVentilators}</p>
-              <p className="text-sm text-white/80">Ventilators</p>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Wind className="w-6 h-6 sm:w-8 sm:h-8 opacity-80 flex-shrink-0" />
+            <div className="min-w-0">
+              <p className="text-lg sm:text-2xl font-bold">{totalVentilators}</p>
+              <p className="text-xs sm:text-sm text-white/80 truncate">Ventilators</p>
             </div>
           </div>
         </Card>
         <Card className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-0">
-          <div className="flex items-center gap-3">
-            <Building2 className="w-8 h-8 opacity-80" />
-            <div>
-              <p className="text-2xl font-bold">{hospitals.length}</p>
-              <p className="text-sm text-white/80">Hospitals</p>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Building2 className="w-6 h-6 sm:w-8 sm:h-8 opacity-80 flex-shrink-0" />
+            <div className="min-w-0">
+              <p className="text-lg sm:text-2xl font-bold">{hospitals.length}</p>
+              <p className="text-xs sm:text-sm text-white/80 truncate">Hospitals</p>
             </div>
           </div>
         </Card>
@@ -100,9 +100,9 @@ export default function BedAvailability() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <select
-              className="px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)]"
+              className="flex-1 sm:flex-none px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-[var(--border)] bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] text-sm sm:text-base"
               value={hospitalType}
               onChange={(e) => setHospitalType(e.target.value as HospitalType)}
             >
@@ -111,7 +111,7 @@ export default function BedAvailability() {
               <option value="Private">Private</option>
             </select>
             <select
-              className="px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)]"
+              className="flex-1 sm:flex-none px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-[var(--border)] bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] text-sm sm:text-base"
               value={bedType}
               onChange={(e) => setBedType(e.target.value as BedType)}
             >

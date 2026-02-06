@@ -212,11 +212,11 @@ export default function ReportIncident() {
               </div>
 
               {/* Submit */}
-              <div className="flex items-center justify-between pt-4 border-t border-[var(--border)]">
-                <p className="text-sm text-[var(--muted-foreground)]">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-4 border-t border-[var(--border)]">
+                <p className="text-xs sm:text-sm text-[var(--muted-foreground)] text-center sm:text-left">
                   Your information is secure and confidential
                 </p>
-                <Button type="submit" size="lg">
+                <Button type="submit" size="lg" className="w-full sm:w-auto justify-center">
                   <Send className="w-5 h-5" />
                   Submit Report
                 </Button>

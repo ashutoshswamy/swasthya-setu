@@ -86,7 +86,7 @@ export function Card({
         whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
         transition={{ type: "spring", stiffness: 300 }}
         className={cn(
-          "rounded-2xl p-6 cursor-pointer",
+          "rounded-xl sm:rounded-2xl p-4 sm:p-6 cursor-pointer",
           variants[variant],
           className
         )}
@@ -100,7 +100,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl p-6",
+        "rounded-xl sm:rounded-2xl p-4 sm:p-6",
         variants[variant],
         className
       )}
@@ -242,23 +242,23 @@ export function StatCard({
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="relative overflow-hidden rounded-2xl p-6 bg-[var(--card)] border border-[var(--border)] cursor-pointer"
+      className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 bg-[var(--card)] border border-[var(--border)] cursor-pointer"
     >
-      <div className="flex items-start justify-between">
-        <div className="space-y-2">
-          <p className="text-sm font-medium text-[var(--muted-foreground)]">
+      <div className="flex items-start justify-between gap-2">
+        <div className="space-y-1 sm:space-y-2 min-w-0 flex-1">
+          <p className="text-xs sm:text-sm font-medium text-[var(--muted-foreground)] truncate">
             {title}
           </p>
-          <p className="text-3xl font-bold text-[var(--foreground)]">
+          <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[var(--foreground)]">
             {value}
           </p>
           {subtitle && (
-            <p className="text-sm text-[var(--muted-foreground)]">{subtitle}</p>
+            <p className="text-xs sm:text-sm text-[var(--muted-foreground)] truncate">{subtitle}</p>
           )}
           {trend && (
             <div
               className={cn(
-                "inline-flex items-center gap-1 text-sm font-medium",
+                "inline-flex items-center gap-1 text-xs sm:text-sm font-medium",
                 trend.isPositive
                   ? "text-[var(--secondary-600)]"
                   : "text-[var(--danger-500)]"
@@ -271,14 +271,14 @@ export function StatCard({
         </div>
         <div
           className={cn(
-            "p-3 rounded-xl",
+            "p-2 sm:p-3 rounded-lg sm:rounded-xl flex-shrink-0",
             iconColors[variant]
           )}
         >
           {icon}
         </div>
       </div>
-      <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+      <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 opacity-5">
         {icon}
       </div>
     </motion.div>
